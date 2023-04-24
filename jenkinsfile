@@ -13,4 +13,20 @@ pipeline {
                 git branch: 'main', credentialsId: 'git_creds', url: 'https://github.com/cafe-11/terraform.git'
             }
         }
-        }}
+        stage('Init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        stage('Action') {
+            steps {
+                sh 'terraform ${action} --auto-approve'
+            }
+        }
+    }
+}
