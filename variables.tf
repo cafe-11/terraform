@@ -13,7 +13,7 @@ variable "vpc_cidr" {
 variable "vpc_tag_name" {
   type   = string
   description = "Enter the Vpc Tag Name"
-  default = "new-vpc"
+  default = "new_vpc"
 }
 
 variable "public_cidrs" {
